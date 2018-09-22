@@ -1,0 +1,10 @@
+version: '2'
+services:
+    kafka-mysql:
+        extends:
+            file: mysql.yml
+            service: kafka-mysql
+    kafka-postgresql:
+        extends:
+            file: postgresql.yml
+            service: kafka-postgresql
