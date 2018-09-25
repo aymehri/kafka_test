@@ -6,6 +6,8 @@ services:
     container_name: kafka-mysql
     ports:
       - 3306:3306
+    networks:
+      - host
     volumes:
       - ~/volumes/kafka/kafkamysql/mysql/:/var/lib/mysql/
     environment:

@@ -1,11 +1,13 @@
 version: '2'
 services:
-    kafka-postgresql:
-        image: postgres:10.4
-        volumes:
-            - ~/volumes/kafka/kafkapostgresql/postgresql/:/var/lib/postgresql/data/
-        environment:
-            - POSTGRES_USER=postgres
-            - POSTGRES_PASSWORD=
-        ports:
-            - 5432:5432
+  kafka-postgresql:
+    image: postgres:10.4
+    networks:
+      - host
+    volumes:
+      - ~/volumes/kafka/kafkapostgresql/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432
