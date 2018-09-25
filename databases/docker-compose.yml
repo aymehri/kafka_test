@@ -1,16 +1,9 @@
 version: '2'
 services:
   kafka-mysql:
-    build: mysql
-    hostname: mysql
-    container_name: mysql
-    ports:
-      - "3306:3306"
-    environment:
-      - MYSQL_DATABASE=kafka
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_USER=mysql
-      - MYSQL_PASSWORD=mysql
+    extends:
+      file: mysql.yml
+      service: kafka-mysql
   kafka-postgresql:
     extends:
       file: postgresql.yml
