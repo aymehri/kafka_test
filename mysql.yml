@@ -9,13 +9,13 @@ services:
       - 3306:3306
     networks:
       - host
-    volumes:
-      - ~/volumes/kafka/kafkamysql/mysql/:/var/lib/mysql/
+    #volumes:
+      #- ~/volumes/kafka/kafkamysql/mysql/:/var/lib/mysql/
     environment:
-      - MYSQL_USER=root
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-      - MYSQL_DATABASE=kafkamysql
-    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+      - MYSQL_ROOT_PASSWORD=debezium
+      - MYSQL_USER=mysqluser
+      - MYSQL_PASSWORD=mysqlpw
+    #command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
 networks:
   host:
     driver: "bridge"

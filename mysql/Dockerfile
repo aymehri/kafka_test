@@ -1,7 +1,6 @@
-FROM mysql:5.7.20
+FROM mysql:5.7
 
-MAINTAINER Aymen Mehri
+MAINTAINER Debezium Community
 
-# see : https://debezium.io/docs/connectors/mysql/
 COPY mysql.cnf /etc/mysql/conf.d/
-COPY initdb.sql /docker-entrypoint-initdb.d/
+COPY inventory.sql /docker-entrypoint-initdb.d/
