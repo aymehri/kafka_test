@@ -1,5 +1,7 @@
-package com.aymen.streamkafka;
+package com.aymen.streamkafka.service;
 
+import com.aymen.streamkafka.streams.Greetings;
+import com.aymen.streamkafka.streams.GreetingsStreams;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHeaders;
