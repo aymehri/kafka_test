@@ -3,7 +3,7 @@ services:
   kafka-mysql:
     build: mysql
     image: test/mysql:1.0
-    hostname: kafka-mysql
+    hostname: mysql
     container_name: kafka-mysql
     ports:
       - 3306:3306

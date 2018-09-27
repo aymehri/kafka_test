@@ -99,7 +99,7 @@ A pretty json passed in the previous request :
     "database.server.name": "dbserver1",
     "database.whitelist": "inventory",
     "database.history.kafka.bootstrap.servers": "localhost:9092",
-    "database.history.kafka.topic": "schema-changes.inventory"
+    "database.history.kafka.topic": "dbhistory.inventory"
   }
 }
 ```
@@ -115,3 +115,15 @@ Consume one of these new topics :
 ```
 
 ## Kafka Connect Sink
+
+Configure sink connector 
+Use Sink in a json file
+```sh
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @jdbc-sink.json
+```
+
+Use Source in a json file
+```sh
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @source.json
+```
+
