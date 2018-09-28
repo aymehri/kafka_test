@@ -13,9 +13,16 @@ import reactor.core.publisher.Flux;
 @EnableBinding({GreetingsSink.class})
 public class GreetingsReactorListnerService {
 
+    private volatile Flux<Greetings> recordFlux;
+
     @StreamListener(GreetingsSink.INPUT)
     public void handleGreetings(@Payload Flux<Greetings> greetings) {
+        this.recordFlux = greetings;
         greetings.subscribe( x -> log.info("Received greetings: {}", x));
+    }
+
+    public Flux<Greetings> getRecordFlux() {
+        return recordFlux;
     }
 
 }
