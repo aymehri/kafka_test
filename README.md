@@ -127,3 +127,6 @@ Use Source in a json file
 curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @source.json
 ```
 
+## Usefull Link
+
+`https://github.com/debezium/debezium-examples/tree/master/unwrap-smt`[Confluent](https://github.com/debezium/debezium-examples/tree/master/unwrap-smt).
