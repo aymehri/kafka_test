@@ -10,3 +10,4 @@ spring:
         greetings-in:
           destination: greetings
           contentType: application/json
+          group: greeting-group-2

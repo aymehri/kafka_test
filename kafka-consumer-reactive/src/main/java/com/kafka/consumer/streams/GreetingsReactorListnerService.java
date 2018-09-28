@@ -15,8 +15,7 @@ public class GreetingsReactorListnerService {
 
     @StreamListener(GreetingsSink.INPUT)
     public void handleGreetings(@Payload Flux<Greetings> greetings) {
-        greetings.
-                subscribe( x -> log.info("Received greetings: {}", x));
+        greetings.subscribe( x -> log.info("Received greetings: {}", x));
     }
 
 }
