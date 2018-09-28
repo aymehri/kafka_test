@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class GreetingsListener {
 
-    @StreamListener(GreetingsStreams.INPUT)
+    @StreamListener(GreetingsSink.INPUT)
     public void handleGreetings(@Payload Greetings greetings) {
         log.info("Received greetings: {}", greetings);
     }

@@ -1,7 +1,7 @@
 package com.kafka.producer.service;
 
 import com.kafka.producer.streams.Greetings;
-import com.kafka.producer.streams.GreetingsStreams;
+import com.kafka.producer.streams.GreetingsSource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHeaders;
@@ -13,16 +13,16 @@ import org.springframework.util.MimeTypeUtils;
 @Slf4j
 public class GreetingsService {
 
-    private final GreetingsStreams greetingsStreams;
+    private final GreetingsSource greetingsSource;
 
-    public GreetingsService(GreetingsStreams greetingsStreams) {
-        this.greetingsStreams = greetingsStreams;
+    public GreetingsService(GreetingsSource greetingsStreams) {
+        this.greetingsSource = greetingsStreams;
     }
 
     public void sendGreeting(final Greetings greetings) {
         log.info("Sending greetings {}", greetings);
 
-        MessageChannel messageChannel = greetingsStreams.outboundGreetings();
+        MessageChannel messageChannel = greetingsSource.outboundGreetings();
         messageChannel.send(MessageBuilder
                 .withPayload(greetings)
                 .setHeader(MessageHeaders.CONTENT_TYPE, MimeTypeUtils.APPLICATION_JSON)

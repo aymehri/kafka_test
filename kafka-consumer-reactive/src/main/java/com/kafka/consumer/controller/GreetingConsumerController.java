@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
+import java.time.Duration;
+
 @RestController
 public class GreetingConsumerController {
 
@@ -16,8 +18,14 @@ public class GreetingConsumerController {
     }
 
     @GetMapping("/greetings")
-    public Flux<Greetings> list() {
-        return this.service.getAll();
+    Flux<Greetings> list() {
+        Duration time = Duration.ofSeconds(1);
+        return Flux.interval(Duration.ofSeconds(1))
+                .map(l -> Greetings.builder()
+                        .message("Hello")
+                        .timestamp(System.currentTimeMillis())
+                        .build());
+        // return this.service.getAll();
     }
 
 
