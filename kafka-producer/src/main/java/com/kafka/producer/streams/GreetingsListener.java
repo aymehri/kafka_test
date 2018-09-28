@@ -1,4 +1,4 @@
-package com.aymen.streamkafka.streams;
+package com.kafka.producer.streams;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.annotation.StreamListener;

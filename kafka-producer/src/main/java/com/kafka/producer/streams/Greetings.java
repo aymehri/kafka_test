@@ -1,4 +1,4 @@
-package com.aymen.streamkafka.streams;
+package com.kafka.producer.streams;
 
 import lombok.*;
 

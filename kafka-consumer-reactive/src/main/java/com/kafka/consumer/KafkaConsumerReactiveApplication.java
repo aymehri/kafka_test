@@ -1,12 +1,12 @@
-package com.aymen.streamkafka;
+package com.kafka.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StreamkafkaApplication {
+public class KafkaConsumerReactiveApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StreamkafkaApplication.class, args);
+		SpringApplication.run(KafkaConsumerReactiveApplication.class, args);
 	}
 }

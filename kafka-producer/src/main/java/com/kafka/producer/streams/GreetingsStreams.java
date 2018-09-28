@@ -1,4 +1,4 @@
-package com.aymen.streamkafka.streams;
+package com.kafka.producer.streams;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;

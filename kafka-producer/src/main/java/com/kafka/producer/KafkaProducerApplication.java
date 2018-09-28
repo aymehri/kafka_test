@@ -1,12 +1,12 @@
-package com.aymen.kafka.consumer.kafkaconsumerreactive;
+package com.kafka.producer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KafkaConsumerReactiveApplication {
+public class KafkaProducerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KafkaConsumerReactiveApplication.class, args);
+		SpringApplication.run(KafkaProducerApplication.class, args);
 	}
 }

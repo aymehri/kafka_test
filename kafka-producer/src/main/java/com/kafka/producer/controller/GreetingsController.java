@@ -1,7 +1,7 @@
-package com.aymen.streamkafka.controller;
+package com.kafka.producer.controller;
 
-import com.aymen.streamkafka.streams.Greetings;
-import com.aymen.streamkafka.service.GreetingsService;
+import com.kafka.producer.streams.Greetings;
+import com.kafka.producer.service.GreetingsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
