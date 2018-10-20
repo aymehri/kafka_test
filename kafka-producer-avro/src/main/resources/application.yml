@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        persons-in:
+          destination: persons-topic
+          contentType: application/*+avro
+          group: persons-group-1
+        persons-out:
+          destination: persons-topic
+          contentType: application/*+avro
+      schema:
+        avro:
+          schema-locations: classpath:avro/person.avsc
+      schema-registry-client:
+        endpoint: http://localhost:8990
